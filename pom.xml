@@ -29,6 +29,7 @@
         <module>sti-hknn-domain</module>
         <module>sti-hknn-service</module>
         <module>sti-hknn-service-impl</module>
+        <module>sti-hknn-unittest</module>
     </modules>
 
     <dependencyManagement>
