@@ -26,6 +26,9 @@
 
     <modules>
         <!-- Fyll i vid behov -->
+        <module>sti-hknn-domain</module>
+        <module>sti-hknn-service</module>
+        <module>sti-hknn-service-impl</module>
     </modules>
 
     <dependencyManagement>

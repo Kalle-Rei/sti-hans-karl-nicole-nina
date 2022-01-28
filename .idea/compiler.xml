@@ -6,6 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sti-hknn-service-impl" />
+        <module name="sti-hknn-domain" />
+        <module name="sti-hknn-service" />
       </profile>
     </annotationProcessing>
   </component>
