@@ -1,14 +1,15 @@
 package sti.hknn.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Person {
     protected String firstName;
     protected String lastName;
     protected String personalId;
-    protected List<Course> courseList;
+    protected ArrayList<Course> courseList = new ArrayList<>();
 
-    public Person(String firstName, String lastName, String personalId, List<Course> courseList) {
+    public Person(String firstName, String lastName, String personalId, ArrayList<Course> courseList) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.personalId = personalId;
@@ -43,7 +44,7 @@ public abstract class Person {
         return courseList;
     }
 
-    public void setCourseList(List<Course> courseList) {
+    public void setCourseList(ArrayList<Course> courseList) {
         this.courseList = courseList;
     }
 }

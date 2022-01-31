@@ -1,12 +1,12 @@
 package sti.hknn.domain;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Teacher extends Person{
 
     private int hourlyWage;
 
-    public Teacher(String firstName, String lastName, String personalId, List<Course> courseList, int hourlyWage) {
+    public Teacher(String firstName, String lastName, String personalId, ArrayList<Course> courseList, int hourlyWage) {
         super(firstName, lastName, personalId, courseList);
         this.hourlyWage = hourlyWage;
     }

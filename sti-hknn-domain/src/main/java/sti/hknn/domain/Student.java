@@ -1,11 +1,12 @@
 package sti.hknn.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student extends Person{
     private String computer;
 
-    public Student(String firstName, String lastName, String personalId, List<Course> courseList, String computer) {
+    public Student(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer) {
         super(firstName, lastName, personalId, courseList);
         this.computer = computer;
     }
