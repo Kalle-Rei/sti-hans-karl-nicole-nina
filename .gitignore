@@ -78,3 +78,6 @@ fabric.properties
 
 target/**
 sti-hknn-domain/target/classes/**
+sti-hknn-service/target/**
+sti-hknn-service-impl/target/**
+sti-hknn-unittest/target/**
