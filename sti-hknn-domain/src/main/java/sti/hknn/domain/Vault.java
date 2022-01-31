@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Vault {
-    static ArrayList<Course> courseList = new ArrayList<Course>();
-    static ArrayList<Student> students = new ArrayList<>();
+    public static ArrayList<Course> courseList = new ArrayList<>();
+    public static ArrayList<Student> students = new ArrayList<>();
 
 
     public static ArrayList<Student> createStudentList(){

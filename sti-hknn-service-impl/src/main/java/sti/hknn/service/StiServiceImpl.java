@@ -8,13 +8,20 @@ package sti.hknn.service;
 
 import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
+import static sti.hknn.domain.Vault.students;
 
 import java.util.ArrayList;
 
 public class StiServiceImpl implements StiService{
     @Override
-    public Student getStudent(String personalId) {
-        return null;
+    public String getStudent(String personalId) {
+        for(Student student: students){
+            if(student.getPersonalId().equalsIgnoreCase(personalId)){
+                return student.getFirstName() + " " + student.getLastName() + ", " + student.getCourseList();
+            }
+        }
+
+        return "Det finns ingen student med ID " + personalId + ".";
     }
 
     @Override

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public interface StiService {
 
-    Student getStudent(String personalId);
+    String getStudent(String personalId);
     Student addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer);
     Student addCourse();
 }
