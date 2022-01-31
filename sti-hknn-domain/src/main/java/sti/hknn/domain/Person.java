@@ -47,4 +47,14 @@ public abstract class Person {
     public void setCourseList(ArrayList<Course> courseList) {
         this.courseList = courseList;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", personalId='" + personalId + '\'' +
+                ", courseList=" + courseList +
+                '}';
+    }
 }

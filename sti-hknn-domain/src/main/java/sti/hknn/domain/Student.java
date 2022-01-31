@@ -18,4 +18,15 @@ public class Student extends Person{
     public void setComputer(String computer) {
         this.computer = computer;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", personalId='" + personalId + '\'' +
+                ", courseList=" + courseList +
+                ", computer='" + computer + '\'' +
+                '}';
+    }
 }

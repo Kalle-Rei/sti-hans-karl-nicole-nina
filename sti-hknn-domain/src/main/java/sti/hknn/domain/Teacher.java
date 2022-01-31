@@ -18,4 +18,15 @@ public class Teacher extends Person{
     public void setHourlyWage(int hourlyWage) {
         this.hourlyWage = hourlyWage;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", personalId='" + personalId + '\'' +
+                ", courseList=" + courseList +
+                ", hourlyWage=" + hourlyWage +
+                '}';
+    }
 }
