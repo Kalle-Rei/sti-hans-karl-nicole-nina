@@ -1,8 +1,20 @@
 package sti.hknn.domain;
-//Studenterna har förnamn, efternamn, personnummer, ett antal
-//kurser och varsin dator.
-//Varje Lärare har förnamn, efternamn, personnnummer, en lista med kurser och en timlön.
-public class Student {
 
+import java.util.List;
 
+public class Student extends Person{
+    private String computer;
+
+    public Student(String firstName, String lastName, String personalId, List<Course> courseList, String computer) {
+        super(firstName, lastName, personalId, courseList);
+        this.computer = computer;
+    }
+
+    public String getComputer() {
+        return computer;
+    }
+
+    public void setComputer(String computer) {
+        this.computer = computer;
+    }
 }

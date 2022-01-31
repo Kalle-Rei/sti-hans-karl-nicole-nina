@@ -1,6 +1,21 @@
 package sti.hknn.domain;
-//Studenterna har förnamn, efternamn, personnummer, ett antal
-//kurser och varsin dator.
-//Varje Lärare har förnamn, efternamn, personnnummer, en lista med kurser och en timlön.
-public class Teacher {
+
+import java.util.List;
+
+public class Teacher extends Person{
+
+    private int hourlyWage;
+
+    public Teacher(String firstName, String lastName, String personalId, List<Course> courseList, int hourlyWage) {
+        super(firstName, lastName, personalId, courseList);
+        this.hourlyWage = hourlyWage;
+    }
+
+    public int getHourlyWage() {
+        return hourlyWage;
+    }
+
+    public void setHourlyWage(int hourlyWage) {
+        this.hourlyWage = hourlyWage;
+    }
 }

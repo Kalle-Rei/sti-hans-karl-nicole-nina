@@ -1,13 +1,49 @@
 package sti.hknn.domain;
 
-//Studenterna har förnamn, efternamn, personnummer, ett antal
-//kurser och varsin dator.
-//Varje Lärare har förnamn, efternamn, personnnummer, en lista med kurser och en timlön.
+import java.util.List;
 
-//Person har då förnamn, efternamn, personnummer och en lista med kurser
 public abstract class Person {
     protected String firstName;
     protected String lastName;
     protected String personalId;
+    protected List<Course> courseList;
 
+    public Person(String firstName, String lastName, String personalId, List<Course> courseList) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.personalId = personalId;
+        this.courseList = courseList;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPersonalId() {
+        return personalId;
+    }
+
+    public void setPersonalId(String personalId) {
+        this.personalId = personalId;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
 }
