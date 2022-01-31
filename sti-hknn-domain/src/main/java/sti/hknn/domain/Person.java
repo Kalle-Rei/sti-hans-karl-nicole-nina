@@ -43,6 +43,12 @@ public abstract class Person {
     public List<Course> getCourseList() {
         return courseList;
     }
+    public void addCourse(Course course){
+        courseList.add(course);
+    }
+    public void removeCourse(Course course){
+        courseList.remove(course);
+    }
 
     public void setCourseList(ArrayList<Course> courseList) {
         this.courseList = courseList;
