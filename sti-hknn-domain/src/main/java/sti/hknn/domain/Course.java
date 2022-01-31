@@ -49,9 +49,9 @@ public class Course {
     public String toString() {
         return "Course{" +
                 "credits=" + credits +
-                ", teacher=" + teacher +
-                ", courseId='" + courseId + '\'' +
-                ", courseHours=" + courseHours +
+                ",\n teacher=" + teacher +
+                ",\n courseId='" + courseId + '\'' +
+                ",\n courseHours=" + courseHours +
                 '}';
     }
 }

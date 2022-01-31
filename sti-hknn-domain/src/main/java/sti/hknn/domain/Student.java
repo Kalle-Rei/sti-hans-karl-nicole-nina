@@ -22,11 +22,11 @@ public class Student extends Person{
     @Override
     public String toString() {
         return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", personalId='" + personalId + '\'' +
-                ", courseList=" + courseList +
-                ", computer='" + computer + '\'' +
+                "\nfirstName='" + firstName + '\'' +
+                ",\n lastName='" + lastName + '\'' +
+                ",\n personalId='" + personalId + '\'' +
+                ",\n courseList=" + courseList +
+                ",\n computer='" + computer + '\'' +
                 '}';
     }
 }
