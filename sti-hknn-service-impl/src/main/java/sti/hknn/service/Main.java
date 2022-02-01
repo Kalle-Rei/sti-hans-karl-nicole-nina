@@ -1,5 +1,6 @@
 package sti.hknn.service;
 
+import sti.hknn.domain.Student;
 import sti.hknn.domain.Vault;
 
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class Main {
         //System.out.println(students.toString());
 
         printMenu();
-        menuChoice(s.nextInt());
+        //menuChoice(s.nextInt());
 
 
 
@@ -30,7 +31,7 @@ public class Main {
         System.out.println("0. Exit.");
     }
 
-    public static void menuChoice(int choice){
+    public void menuChoice(int choice){
 
         switch (choice){
 
@@ -42,6 +43,18 @@ public class Main {
 
             }
             case 2:{ //Add new student
+                s.nextLine();
+                System.out.println("Enter first name: ");
+                String firstName = s.nextLine();
+                System.out.println("Enter last name: ");
+                String lastName = s.nextLine();
+                System.out.println("Enter personal id: ");
+                String personalId = s.nextLine();
+                System.out.println("Enter computer brand: ");
+                String computer = s.nextLine();
+                //Student newStudent = StiServiceImpl.addStudent(firstName, lastName, personalId, Vault.createCourseList(), computer);
+
+
 
             }
             case 3:{ //Add or remove course for a given student
