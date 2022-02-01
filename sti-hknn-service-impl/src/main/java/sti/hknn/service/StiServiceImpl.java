@@ -12,9 +12,8 @@ import java.util.ArrayList;
 
 public class StiServiceImpl implements StiService{
     private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
-    //kan tänkas vilja ändra denna till att returnera en Student istället och sköta outputen från Main eller annan metod
-    @Override
-    public String getStudent(String personalId) {
+
+    public static String getStudent(String personalId) {
         for(Student student: students){
             if(student.getPersonalId().equalsIgnoreCase(personalId)){
                 return student.getFirstName() + " " + student.getLastName() + ", " + student.getCourseList();

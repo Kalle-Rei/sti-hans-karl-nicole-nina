@@ -1,6 +1,5 @@
-1. Hur använder vi Service/ServiceImpl från Main?
+1. Hur använder vi Service/ServiceImpl från Main? -- DONE!
 2. Hur och var får vi in Logger?
 3. Exceptions och handling -- addCourse behöver try-catch
 4. Fråga 7a -- har vi gjort detta? Eller vad menas med .xml-fil i den här kontexten?
 5. Skapa ett UML diagram och lägg till det i projektets root mapp
-6.
