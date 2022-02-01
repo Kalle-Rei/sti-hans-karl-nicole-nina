@@ -7,7 +7,7 @@ public abstract class Person {
     protected String firstName;
     protected String lastName;
     protected String personalId;
-    protected ArrayList<Course> courseList = new ArrayList<>();
+    protected ArrayList<Course> courseList;
 
     public Person(String firstName, String lastName, String personalId, ArrayList<Course> courseList) {
         this.firstName = firstName;
