@@ -2,3 +2,4 @@
 2. Hur och var får vi in Logger?
 3. Exceptions och handling
 4. Fråga 7a -- har vi gjort detta? Eller vad menas med .xml-fil i den här kontexten?
+5. Skapa ett UML diagram och lägg till det i projektets root mapp

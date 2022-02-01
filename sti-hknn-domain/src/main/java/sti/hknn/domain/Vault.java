@@ -12,6 +12,7 @@ public class Vault {
 
     public static ArrayList<Student> createStudentList(){
         ArrayList<Student> studentList = new ArrayList<>();
+//        studentList.add(addStudent("Kalle", "Reithmeier", "9302116565", createCourseList(), "Acer"));
         studentList.add(new Student("Kalle", "Reithmeier", "9302116565", createCourseList(), "Acer"));
         studentList.add(new Student("Hans ", "Davidsson", "", createCourseList(), "Acer"));
         studentList.add(new Student("Kalle", "Reithmeier", "9302116565", createCourseList(), "Acer"));

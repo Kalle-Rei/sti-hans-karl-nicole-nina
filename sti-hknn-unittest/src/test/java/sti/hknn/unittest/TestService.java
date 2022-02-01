@@ -5,11 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import sti.hknn.domain.Course;
+
 import sti.hknn.domain.Student;
 import sti.hknn.service.StiService;
-
-import java.util.ArrayList;
 
 import static sti.hknn.domain.Vault.courseList;
 
