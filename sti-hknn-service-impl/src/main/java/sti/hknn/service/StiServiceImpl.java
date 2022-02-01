@@ -1,5 +1,7 @@
 package sti.hknn.service;
 
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
 import sti.hknn.domain.Teacher;
@@ -9,7 +11,7 @@ import static sti.hknn.domain.Vault.students;
 import java.util.ArrayList;
 
 public class StiServiceImpl implements StiService{
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
     //kan tänkas vilja ändra denna till att returnera en Student istället och sköta outputen från Main eller annan metod
     @Override
     public String getStudent(String personalId) {
@@ -24,6 +26,7 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public Student addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer) {
+        LOGGER.trace("new student has been added");
         return new Student(firstName, lastName, personalId, courseList, computer);
     }
 
