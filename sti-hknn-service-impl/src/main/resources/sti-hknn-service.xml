@@ -7,4 +7,7 @@
 
     <bean id="stiService" class="sti.hknn.service.StiServiceImpl" >
     </bean>
+    <bean id="main" class="sti.hknn.service.Main" >
+        <constructor-arg name="stiService" ref="stiService"></constructor-arg>
+    </bean>
 </beans>

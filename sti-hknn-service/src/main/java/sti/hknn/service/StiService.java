@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public interface StiService {
 
+    //@TODO: refactor the static away
     static String getStudent(String personalId) {
         return "";
     }

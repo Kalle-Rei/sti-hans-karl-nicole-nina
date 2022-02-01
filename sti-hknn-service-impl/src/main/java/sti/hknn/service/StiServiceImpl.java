@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class StiServiceImpl implements StiService{
     private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
 
+    //@TODO: refactor the static away
     public static String getStudent(String personalId) {
         for(Student student: students){
             if(student.getPersonalId().equalsIgnoreCase(personalId)){
