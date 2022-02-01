@@ -1,0 +1,4 @@
+1. Hur använder vi Service/ServiceImpl från Main?
+2. Hur och var får vi in Logger?
+3. Exceptions och handling
+4. Fråga 7a -- har vi gjort detta? Eller vad menas med .xml-fil i den här kontexten?
