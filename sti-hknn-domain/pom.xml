@@ -13,16 +13,6 @@
 
     <artifactId>sti-hknn-domain</artifactId>
     <packaging>jar</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>se.sti</groupId>
-            <artifactId>sti-hknn-service</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>se.sti</groupId>
-            <artifactId>sti-hknn-service-impl</artifactId>
-        </dependency>
-    </dependencies>
 
 
 </project>

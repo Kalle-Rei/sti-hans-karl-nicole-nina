@@ -3,9 +3,6 @@ package sti.hknn.domain;
 import java.util.ArrayList;
 
 import static sti.hknn.domain.Vault.students;
-import sti.hknn.service.StiService;
-import sti.hknn.service.StiServiceImpl;
-import sti.hknn.service.StiServiceImpl.*;
 
 public class Main {
 
