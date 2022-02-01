@@ -1,7 +1,6 @@
 package sti.hknn.domain;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Student extends Person{
     private String computer;
