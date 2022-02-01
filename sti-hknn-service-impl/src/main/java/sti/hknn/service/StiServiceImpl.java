@@ -27,6 +27,7 @@ public class StiServiceImpl implements StiService{
         return new Student(firstName, lastName, personalId, courseList, computer);
     }
 
+    //Lägg till try-catch för credits och courseHours
     @Override
     public void addCourse(Student student, int credits, Teacher teacher, String courseId, int courseHours) {
         Course course = new Course(credits, teacher, courseId, courseHours);
