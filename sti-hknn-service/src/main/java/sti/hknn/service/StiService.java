@@ -10,8 +10,14 @@ public interface StiService {
 
 
     Student getStudent(String personalId);
+    String printStudentInfo(Student student);
     Student addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer);
     void addCourse(Student student, int credits, Teacher teacher, String courseId, int courseHours);
     void removeCourse(Student student, String courseId);
+    void addNewCourse(String personalId);
+
+    //Menu handlers
+    void printMenu();
+    void menuChoice(int choice);
 
 }
