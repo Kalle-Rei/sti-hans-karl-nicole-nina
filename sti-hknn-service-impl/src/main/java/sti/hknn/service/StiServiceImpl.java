@@ -19,6 +19,7 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public void init(){
+        LOGGER.trace("loaded dummy values");
         Vault.createTeachers();
         students = Vault.createStudentList();
     }
@@ -53,6 +54,7 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public void addCourse(Student student, Course course){
+        LOGGER.trace("course added to student");
         student.addCourse(course);
     }
 
@@ -61,6 +63,7 @@ public class StiServiceImpl implements StiService{
         for(Course course: student.getCourseList()){
             if(courseId.equalsIgnoreCase(course.getCourseId())){
                 student.removeCourse(course);
+                LOGGER.trace("course removed from student");
             }
         }
     }
@@ -122,6 +125,7 @@ public class StiServiceImpl implements StiService{
                 s.nextLine();
                 switch(choice2){
                     case 1:{
+                        //print all courses in courseList NOT in student.courseList
                         for(Course course: courseList){
                             if(!getStudent(personalId).getCourseList().contains(course)){
                                 System.out.println(course.getCourseId());
@@ -130,6 +134,7 @@ public class StiServiceImpl implements StiService{
                         break;
                     }
                     case 2:{
+                        //print all courses in student.courseList
                         printCourses(getStudent(personalId));
                         break;
 
@@ -152,7 +157,7 @@ public class StiServiceImpl implements StiService{
             }
         }
     }
-    //@TODO: finish refactoring and test this
+    //@TODO: decide if this method is necessary, if so refactor, otherwise remove it
     @Override
     public void addNewCourse(String personalId){ //int credits, Teacher teacher, String courseId, int courseHours
         for(Student student: students){
