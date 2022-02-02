@@ -11,6 +11,7 @@ import sti.hknn.service.StiService;
 
 import static sti.hknn.domain.Vault.courseList;
 
+//@TODO: make all tests work in our new, (mostly) non-static environment
 public class TestService {
     ApplicationContext applicationContext= new ClassPathXmlApplicationContext("classpath:sti-hknn-service.xml");
     private StiService stiService;

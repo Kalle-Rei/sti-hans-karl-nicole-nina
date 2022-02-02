@@ -2,7 +2,6 @@ package sti.hknn.service;
 
 import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
-import sti.hknn.domain.Teacher;
 
 import java.util.ArrayList;
 

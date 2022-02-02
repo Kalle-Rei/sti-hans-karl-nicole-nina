@@ -1,2 +1,1 @@
-3. Exceptions och handling -- addCourse behöver try-catch
-5. Skapa ett UML diagram och lägg till det i projektets root mapp
+1. Skapa ett UML diagram och lägg till det i projektets root mapp

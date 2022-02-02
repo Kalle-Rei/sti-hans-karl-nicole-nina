@@ -131,11 +131,13 @@ public class StiServiceImpl implements StiService{
                                 System.out.println(course.getCourseId());
                             }
                         }
+                        //@TODO: let the user add any of the printed courses to student.courseList
                         break;
                     }
                     case 2:{
                         //print all courses in student.courseList
                         printCourses(getStudent(personalId));
+                        //@TODO: let the user remove any of the printed courses from student.courseList
                         break;
 
                     }
@@ -143,11 +145,11 @@ public class StiServiceImpl implements StiService{
 
                 break;
             }
-            case 4:{ //Print all students and courses
+            case 4:{ //@TODO: Print all students and courses
                 break;
 
             }
-            case 0:{ //Exit
+            case 0:{ //@TODO: Exit the program
                 break;
 
             }
