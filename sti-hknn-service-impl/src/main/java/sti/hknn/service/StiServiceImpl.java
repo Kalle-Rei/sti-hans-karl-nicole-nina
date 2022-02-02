@@ -37,9 +37,10 @@ public class StiServiceImpl implements StiService{
     }
 
     @Override
-    public Student addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer) {
+    public void addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer) {
         LOGGER.trace("new student has been added");
-        return new Student(firstName, lastName, personalId, courseList, computer);
+        Student newStudent = new Student(firstName, lastName, personalId, courseList, computer);
+        students.add(newStudent);
     }
 
     //@TODO: Lägg till try-catch för credits och courseHours
@@ -79,10 +80,12 @@ public class StiServiceImpl implements StiService{
                 String input = s.nextLine();
                 //System.out.println(StiServiceImpl.getStudent(input));
                 System.out.println();
+                break;
 
             }
-            //@TODO: refactor and test
+            
             case 2:{ //Add new student
+                ArrayList<Course> courses = new ArrayList<>();
                 s.nextLine();
                 System.out.println("Enter first name: ");
                 String firstName = s.nextLine();
@@ -92,10 +95,8 @@ public class StiServiceImpl implements StiService{
                 String personalId = s.nextLine();
                 System.out.println("Enter computer brand: ");
                 String computer = s.nextLine();
-                //Student newStudent = StiServiceImpl.addStudent(firstName, lastName, personalId, Vault.createCourseList(), computer);
-                //students.add(newStudent);
-
-
+                addStudent(firstName, lastName, personalId, courses, computer);
+                break;
 
             }
             case 3:{ //Add or remove course for a given student
@@ -108,21 +109,26 @@ public class StiServiceImpl implements StiService{
                 switch(choice2){
                     case 1:{
                         addNewCourse(personalId);
+                        break;
                     }
                     case 2:{
+                        break;
 
                     }
                 }
 
-
+                break;
             }
             case 4:{ //Print all students and courses
+                break;
 
             }
             case 0:{ //Exit
+                break;
 
             }
             default:{
+                break;
 
             }
         }

@@ -4,10 +4,10 @@ import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
 import sti.hknn.domain.Vault;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-import static sti.hknn.domain.Vault.students;
-import static sti.hknn.domain.Vault.teacher1;
+import static sti.hknn.domain.Vault.*;
 
 public class Main {
     private StiService stiService;
@@ -25,7 +25,12 @@ public class Main {
         students = Vault.createStudentList();
         //Test stuff below
         main.stiService.printMenu();
-        System.out.println(main.stiService.printStudentInfo(main.stiService.getStudent("3333")));
+        //main.stiService.addStudent("Test", "Testat", "5555", courseList, "computer");
+//        System.out.println(main.stiService.printStudentInfo(main.stiService.getStudent("5555")));
+//        System.out.println(main.stiService.getStudent("5555"));
+        main.stiService.menuChoice(2);
+        System.out.println(main.stiService.getStudent("6666"));
+
 
     }
 }
