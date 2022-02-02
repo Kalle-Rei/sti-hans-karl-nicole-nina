@@ -22,14 +22,16 @@ public class Main {
     }
     public static void main(String[] args) {
         Main main = new Main(new StiServiceImpl());
+        Vault.createTeachers();
         students = Vault.createStudentList();
+
         //Test stuff below
         main.stiService.printMenu();
         //main.stiService.addStudent("Test", "Testat", "5555", courseList, "computer");
 //        System.out.println(main.stiService.printStudentInfo(main.stiService.getStudent("5555")));
-//        System.out.println(main.stiService.getStudent("5555"));
-        main.stiService.menuChoice(2);
-        System.out.println(main.stiService.getStudent("6666"));
+        System.out.println(main.stiService.getStudent("2222"));
+        //main.stiService.menuChoice(2);
+        //System.out.println(main.stiService.getStudent("6666"));
 
 
     }

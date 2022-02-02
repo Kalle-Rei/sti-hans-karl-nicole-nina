@@ -62,7 +62,7 @@ public class StiServiceImpl implements StiService{
     @Override
     public void printMenu(){
         System.out.println("MENU:");
-        System.out.println("1. Get a student via personalId.");
+        System.out.println("1. Get a student via personal id.");
         System.out.println("2. Add new student.");
         System.out.println("3. Add or remove course for a given student.");
         System.out.println("4. Print all students and courses.");
@@ -75,15 +75,14 @@ public class StiServiceImpl implements StiService{
         switch (choice){
 
             case 1:{ //Get a student via personalId
-                //@TODO: print instructions to the user
                 s.nextLine();
-                String input = s.nextLine();
-                //System.out.println(StiServiceImpl.getStudent(input));
-                System.out.println();
+                System.out.println("Enter personal id: ");
+                String personalId = s.nextLine();
+                System.out.println(printStudentInfo(getStudent(personalId)));
                 break;
 
             }
-            
+
             case 2:{ //Add new student
                 ArrayList<Course> courses = new ArrayList<>();
                 s.nextLine();
@@ -100,7 +99,7 @@ public class StiServiceImpl implements StiService{
 
             }
             case 3:{ //Add or remove course for a given student
-                System.out.println("Enter personalId: ");
+                System.out.println("Enter personal id: ");
                 String personalId = s.nextLine();
                 System.out.println("1. Add a new course");
                 System.out.println("2. Remove a course");
@@ -140,10 +139,10 @@ public class StiServiceImpl implements StiService{
             if(student.getPersonalId().equalsIgnoreCase(personalId)){
                 System.out.println("Enter credits: ");
                 int credits = s.nextInt();
-                System.out.println("Enter courseId: ");
+                System.out.println("Enter course id: ");
                 s.nextLine();
                 String courseId = s.nextLine();
-                System.out.println("Enter courseHours: ");
+                System.out.println("Enter number of hours: ");
                 int courseHours = s.nextInt();
                 s.nextLine();
                 //Course newCourse = StiServiceImpl.addCourse(student, credits, teacher1, courseId, courseHours);

@@ -25,7 +25,6 @@ public class Teacher extends Person{
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", personalId='" + personalId + '\'' +
-                ", courseList=" + courseList +
                 ", hourlyWage=" + hourlyWage +
                 '}';
     }
