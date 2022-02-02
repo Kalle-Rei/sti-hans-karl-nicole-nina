@@ -37,6 +37,18 @@ public class StiServiceImpl implements StiService{
     }
 
     @Override
+    public Course getCourse(String courseId){
+        for(Course course: courseList){
+            if(course.getCourseId().equalsIgnoreCase(courseId)){
+                LOGGER.trace("course found");
+                return course;
+            }
+        }
+        LOGGER.trace("Incorrect courseId. Course not found");
+        return null;
+    }
+
+    @Override
     public String printStudentInfo(Student student){
         String output = student.getFirstName() + " " + student.getLastName() + ",\n";
         for (Course course: student.getCourseList()){
@@ -125,13 +137,17 @@ public class StiServiceImpl implements StiService{
                 s.nextLine();
                 switch(choice2){
                     case 1:{
+                        System.out.println("\nSelect a course: ");
                         //print all courses in courseList NOT in student.courseList
                         for(Course course: courseList){
                             if(!getStudent(personalId).getCourseList().contains(course)){
                                 System.out.println(course.getCourseId());
                             }
                         }
-                        //@TODO: let the user add any of the printed courses to student.courseList
+                        String inputCourse = s.nextLine();
+                        addCourse(getStudent(personalId), getCourse(inputCourse));
+                        System.out.println("Course added.");
+                        System.out.println(printStudentInfo(getStudent(personalId)));
                         break;
                     }
                     case 2:{

@@ -12,6 +12,7 @@ public interface StiService {
     Student getStudent(String personalId);
     String printStudentInfo(Student student);
     void addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer);
+    Course getCourse(String courseId);
     void addCourse(Student student, Course course);
     void removeCourse(Student student, String courseId);
     void addNewCourse(String personalId);
