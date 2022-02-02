@@ -11,7 +11,6 @@ import sti.hknn.service.StiService;
 
 import static sti.hknn.domain.Vault.courseList;
 
-//@TODO: make all tests work in our new, (mostly) non-static environment
 public class TestService {
     ApplicationContext applicationContext= new ClassPathXmlApplicationContext("classpath:sti-hknn-service.xml");
     private StiService stiService;
@@ -21,14 +20,14 @@ public class TestService {
         Assert.assertEquals("firstName", student.getFirstName());
     }
 
-//    @Before
-//    public void Before(){
-//        stiService = (StiService) applicationContext.getBean("stiService");
-//    }
-//    @Test
-//    public void studentConstructorTest2(){
-//        Student student = stiService.addStudent("firstName", "lastName", "personalId", courseList, "computer");
-//        Assert.assertNotNull(student);
-//    }
-
+    @Before
+    public void Before(){
+        stiService = (StiService) applicationContext.getBean("stiService");
+    }
+    @Test
+    public void getStudentTest(){
+        stiService.addStudent("firstName", "lastName", "personalId", courseList, "computer");
+        Student student = stiService.getStudent("personalId");
+        Assert.assertNotNull(student);
+    }
 }
