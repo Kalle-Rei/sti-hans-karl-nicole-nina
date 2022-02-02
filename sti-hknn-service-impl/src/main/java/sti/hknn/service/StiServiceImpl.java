@@ -13,15 +13,16 @@ import java.util.ArrayList;
 public class StiServiceImpl implements StiService{
     private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
 
-    //@TODO: refactor the static away
-    public static String getStudent(String personalId) {
+    @Override
+    public Student getStudent(String personalId){
         for(Student student: students){
             if(student.getPersonalId().equalsIgnoreCase(personalId)){
-                return student.getFirstName() + " " + student.getLastName() + ", " + student.getCourseList();
+                LOGGER.trace("student found");
+                return student;
             }
         }
-
-        return "Det finns ingen student med ID " + personalId + ".";
+        LOGGER.trace("Incorrect personalId. Student not found");
+        return null;
     }
 
     @Override

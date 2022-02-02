@@ -8,11 +8,8 @@ import java.util.ArrayList;
 
 public interface StiService {
 
-    //@TODO: refactor the static away
-    static String getStudent(String personalId) {
-        return "";
-    }
 
+    Student getStudent(String personalId);
     Student addStudent(String firstName, String lastName, String personalId, ArrayList<Course> courseList, String computer);
     void addCourse(Student student, int credits, Teacher teacher, String courseId, int courseHours);
     void removeCourse(Student student, String courseId);

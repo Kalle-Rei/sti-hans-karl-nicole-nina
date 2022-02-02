@@ -23,9 +23,10 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main(new StiServiceImpl());
         //main.stiService.addCourse(); //<----- use this pattern to access methods in ServiceImpl
-        main.printMenu();
+        //main.printMenu();
         students = Vault.createStudentList();
         //System.out.println(students.toString());
+        System.out.println(main.stiService.getStudent("9302116565"));
 
 
 
@@ -49,7 +50,8 @@ public class Main {
                 //@TODO: print instructions to the user
                 s.nextLine();
                 String input = s.nextLine();
-                System.out.println(StiServiceImpl.getStudent(input));
+                //System.out.println(StiServiceImpl.getStudent(input));
+                System.out.println();
 
             }
             case 2:{ //Add new student
