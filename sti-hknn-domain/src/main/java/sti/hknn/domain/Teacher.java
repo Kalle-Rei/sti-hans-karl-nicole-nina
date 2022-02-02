@@ -11,14 +11,6 @@ public class Teacher extends Person{
         this.hourlyWage = hourlyWage;
     }
 
-    public int getHourlyWage() {
-        return hourlyWage;
-    }
-
-    public void setHourlyWage(int hourlyWage) {
-        this.hourlyWage = hourlyWage;
-    }
-
     @Override
     public String toString() {
         return "Teacher{" +

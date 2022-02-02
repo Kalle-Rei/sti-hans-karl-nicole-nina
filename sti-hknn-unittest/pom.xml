@@ -13,6 +13,7 @@
     <artifactId>sti-hknn-unittest</artifactId>
     <packaging>jar</packaging>
     <dependencies>
+        <!-- Project -->
         <dependency>
             <groupId>se.sti</groupId>
             <artifactId>sti-hknn-domain</artifactId>

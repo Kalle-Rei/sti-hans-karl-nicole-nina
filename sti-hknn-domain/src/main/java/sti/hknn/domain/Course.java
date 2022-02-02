@@ -1,5 +1,5 @@
 package sti.hknn.domain;
-//Kurserna har YH-poäng, lärare, kurskoder och antal timmar
+
 public class Course {
     private int credits;
     private Teacher teacher;
@@ -13,36 +13,8 @@ public class Course {
         this.courseHours = courseHours;
     }
 
-    public int getCredits() {
-        return credits;
-    }
-
-    public void setCredits(int credits) {
-        this.credits = credits;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
-
     public String getCourseId() {
         return courseId;
-    }
-
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
-    }
-
-    public int getCourseHours() {
-        return courseHours;
-    }
-
-    public void setCourseHours(int courseHours) {
-        this.courseHours = courseHours;
     }
 
     @Override

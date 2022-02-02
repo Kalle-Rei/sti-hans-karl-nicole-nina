@@ -10,14 +10,6 @@ public class Student extends Person{
         this.computer = computer;
     }
 
-    public String getComputer() {
-        return computer;
-    }
-
-    public void setComputer(String computer) {
-        this.computer = computer;
-    }
-
     @Override
     public String toString() {
         return "Student{" +

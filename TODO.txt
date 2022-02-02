@@ -1,1 +1,0 @@
-1. Skapa ett UML diagram och lägg till det i projektets root mapp
