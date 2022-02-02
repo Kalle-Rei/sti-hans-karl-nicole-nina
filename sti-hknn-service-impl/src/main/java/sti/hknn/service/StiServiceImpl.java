@@ -15,7 +15,6 @@ import java.util.Scanner;
 public class StiServiceImpl implements StiService{
     static Scanner s = new Scanner(System.in);
     private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
-    //@TODO: check LOGGER's functionality and possibly log more events
 
     @Override
     public void init(){
@@ -39,8 +38,7 @@ public class StiServiceImpl implements StiService{
                 return student;
             }
         }
-        LOGGER.trace("Incorrect personalId. Student not found");
-        return null;
+        return null; //classes implementing this method will have to catch NullPointerException
     }
 
     @Override
@@ -51,8 +49,7 @@ public class StiServiceImpl implements StiService{
                 return course;
             }
         }
-        LOGGER.trace("Incorrect courseId. Course not found");
-        return null;
+        return null; //classes implementing this method will have to catch NullPointerException
     }
 
     @Override
@@ -80,14 +77,20 @@ public class StiServiceImpl implements StiService{
     @Override
     public void removeCourse(Student student, String courseId) {
         String courseToRemove = "";
-        for(Course course: student.getCourseList()){
-            if(courseId.equalsIgnoreCase(course.getCourseId())){
-                courseToRemove += course.getCourseId();
-                System.out.println("Course removed.");
-                LOGGER.trace("course removed from student");
+        try{
+            for(Course course: student.getCourseList()){
+                if(courseId.equalsIgnoreCase(course.getCourseId())){
+                    courseToRemove += course.getCourseId();
+                    System.out.println("Course removed.");
+                    LOGGER.trace("course removed from student");
+                }
             }
+            student.removeCourse(getCourse(courseToRemove));
         }
-        student.removeCourse(getCourse(courseToRemove));
+        catch(NullPointerException e){
+            LOGGER.trace("NullPointerException caught");
+        }
+
     }
 
     @Override
@@ -108,14 +111,19 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public boolean menuChoice(int choice){
-        //@TODO: handle exceptions when inputting invalid personalId
         switch (choice){
 
             case 1:{ //Get a student via personalId
                 s.nextLine();
                 System.out.println("Enter personal id: ");
                 String personalId = s.nextLine();
-                System.out.println(printStudentInfo(getStudent(personalId)));
+                try{
+                    System.out.println(printStudentInfo(getStudent(personalId)));
+                }
+                catch(NullPointerException e){
+                    LOGGER.trace("NullPointerException caught");
+                }
+
                 break;
 
             }
@@ -147,24 +155,35 @@ public class StiServiceImpl implements StiService{
                     case 1:{
                         System.out.println("\nSelect a course: ");
                         //print all courses in courseList NOT in student.courseList
-                        for(Course course: courseList){
-                            if(!getStudent(personalId).getCourseList().contains(course)){
-                                System.out.println(course.getCourseId());
+                        try{
+                            for(Course course: courseList){
+                                if(!getStudent(personalId).getCourseList().contains(course)){
+                                    System.out.println(course.getCourseId());
+                                }
                             }
+                            String inputCourse = s.nextLine();
+                            addCourse(getStudent(personalId), getCourse(inputCourse));
+                            System.out.println("Course added.");
+                            System.out.println(printStudentInfo(getStudent(personalId)));
                         }
-                        String inputCourse = s.nextLine();
-                        addCourse(getStudent(personalId), getCourse(inputCourse));
-                        System.out.println("Course added.");
-                        System.out.println(printStudentInfo(getStudent(personalId)));
+                        catch(NullPointerException e){
+                            LOGGER.trace("NullPointerException caught");
+                        }
                         break;
                     }
                     case 2:{
                         //print all courses in student.courseList
                         System.out.println("\nSelect a course: ");
-                        printCourses(getStudent(personalId));
-                        String inputCourse = s.nextLine();
-                        removeCourse(getStudent(personalId), inputCourse);
-                        System.out.println(printStudentInfo(getStudent(personalId)));
+                        try{
+                            printCourses(getStudent(personalId));
+                            String inputCourse = s.nextLine();
+                            removeCourse(getStudent(personalId), inputCourse);
+                            System.out.println(printStudentInfo(getStudent(personalId)));
+                        }
+                        catch(NullPointerException e){
+                            LOGGER.trace("NullPointerException caught");
+                        }
+
                         break;
                     }
                 }
