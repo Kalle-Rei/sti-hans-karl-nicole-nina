@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class StiServiceImpl implements StiService{
     static Scanner s = new Scanner(System.in);
     private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
+    //@TODO: check LOGGER's functionality and possibly log more events
 
     @Override
     public void init(){
@@ -107,7 +108,7 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public boolean menuChoice(int choice){
-
+        //@TODO: handle exceptions when inputting invalid personalId
         switch (choice){
 
             case 1:{ //Get a student via personalId
@@ -170,7 +171,7 @@ public class StiServiceImpl implements StiService{
 
                 break;
             }
-            case 0:{ //@TODO: Exit the program
+            case 0:{
                 System.out.println("Exiting the program.");
                 return false;
             }
