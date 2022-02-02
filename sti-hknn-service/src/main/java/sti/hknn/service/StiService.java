@@ -2,7 +2,6 @@ package sti.hknn.service;
 
 import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
-
 import java.util.ArrayList;
 
 public interface StiService {
@@ -15,11 +14,10 @@ public interface StiService {
     Course getCourse(String courseId);
     void addCourse(Student student, Course course);
     void removeCourse(Student student, String courseId);
-    void addNewCourse(String personalId);
 
     //Menu handlers
     void printMenu();
     void printCourses(Student student);
-    void menuChoice(int choice);
+    boolean menuChoice(int choice);
 
 }

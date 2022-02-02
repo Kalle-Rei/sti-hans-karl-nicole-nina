@@ -4,7 +4,6 @@ import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
 import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
-import sti.hknn.domain.Teacher;
 import sti.hknn.domain.Vault;
 
 import static sti.hknn.domain.Vault.courseList;
@@ -22,6 +21,13 @@ public class StiServiceImpl implements StiService{
         LOGGER.trace("loaded dummy values");
         Vault.createTeachers();
         students = Vault.createStudentList();
+        boolean running = true;
+
+        while(running){
+            printMenu();
+            running = menuChoice(s.nextInt());
+        }
+        s.close();
     }
 
     @Override
@@ -89,7 +95,6 @@ public class StiServiceImpl implements StiService{
         System.out.println("1. Get a student via personal id.");
         System.out.println("2. Add new student.");
         System.out.println("3. Add or remove course for a given student.");
-        System.out.println("4. Print all students and courses.");
         System.out.println("0. Exit.");
     }
 
@@ -101,7 +106,7 @@ public class StiServiceImpl implements StiService{
     }
 
     @Override
-    public void menuChoice(int choice){
+    public boolean menuChoice(int choice){
 
         switch (choice){
 
@@ -159,47 +164,20 @@ public class StiServiceImpl implements StiService{
                         String inputCourse = s.nextLine();
                         removeCourse(getStudent(personalId), inputCourse);
                         System.out.println(printStudentInfo(getStudent(personalId)));
-
-                        //@TODO: let the user remove any of the printed courses from student.courseList
                         break;
-
                     }
                 }
 
                 break;
             }
-            case 4:{ //@TODO: Print all students and courses
-                break;
-
-            }
             case 0:{ //@TODO: Exit the program
-                break;
-
+                System.out.println("Exiting the program.");
+                return false;
             }
             default:{
-                break;
-
+                return false;
             }
         }
+        return true;
     }
-    //@TODO: decide if this method is necessary, if so refactor, otherwise remove it
-    @Override
-    public void addNewCourse(String personalId){ //int credits, Teacher teacher, String courseId, int courseHours
-        for(Student student: students){
-            if(student.getPersonalId().equalsIgnoreCase(personalId)){
-                System.out.println("Enter credits: ");
-                int credits = s.nextInt();
-                System.out.println("Enter course id: ");
-                s.nextLine();
-                String courseId = s.nextLine();
-                System.out.println("Enter number of hours: ");
-                int courseHours = s.nextInt();
-                s.nextLine();
-                //Course newCourse = StiServiceImpl.addCourse(student, credits, teacher1, courseId, courseHours);
-            }
-        }
-
-
-    }
-
 }
