@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Vault {
     public static ArrayList<Course> courseList = new ArrayList<>();
     public static ArrayList<Student> students = new ArrayList<>();
-    //@TODO: change this hacky solution to a less hacky one -- see also createCourseList
     public static Teacher teacher1 = new Teacher("Kisslo", "Shek", "123", courseList, 450);
     public static Teacher teacher2 = new Teacher("Özgür", "Kibar", "456", courseList, 600);
     public static Teacher teacher3 = new Teacher("Mikael", "Wallin", "789", courseList, 550);
@@ -31,8 +30,7 @@ public class Vault {
         teacher2.addCourse(course2);
         teacher3.addCourse(course3);
     }
-
-
+    
     public static ArrayList<Course> createCourseList(){
         ArrayList<Course> courseList1 = new ArrayList<Course>();
         courseList1.add(course1);

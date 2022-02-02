@@ -43,10 +43,8 @@ public class StiServiceImpl implements StiService{
         students.add(newStudent);
     }
 
-    //@TODO: Lägg till try-catch för credits och courseHours
     @Override
-    public void addCourse(Student student, int credits, Teacher teacher, String courseId, int courseHours) {
-        Course course = new Course(credits, teacher, courseId, courseHours);
+    public void addCourse(Student student, Course course){
         student.addCourse(course);
     }
 
@@ -99,6 +97,7 @@ public class StiServiceImpl implements StiService{
 
             }
             case 3:{ //Add or remove course for a given student
+                s.nextLine();
                 System.out.println("Enter personal id: ");
                 String personalId = s.nextLine();
                 System.out.println("1. Add a new course");

@@ -20,14 +20,14 @@ public class TestService {
         Assert.assertEquals("firstName", student.getFirstName());
     }
 
-    @Before
-    public void Before(){
-        stiService = (StiService) applicationContext.getBean("stiService");
-    }
-    @Test
-    public void studentConstructorTest2(){
-        Student student = stiService.addStudent("firstName", "lastName", "personalId", courseList, "computer");
-        Assert.assertNotNull(student);
-    }
+//    @Before
+//    public void Before(){
+//        stiService = (StiService) applicationContext.getBean("stiService");
+//    }
+//    @Test
+//    public void studentConstructorTest2(){
+//        Student student = stiService.addStudent("firstName", "lastName", "personalId", courseList, "computer");
+//        Assert.assertNotNull(student);
+//    }
 
 }
