@@ -5,7 +5,9 @@ import com.sun.org.slf4j.internal.LoggerFactory;
 import sti.hknn.domain.Course;
 import sti.hknn.domain.Student;
 import sti.hknn.domain.Teacher;
+import sti.hknn.domain.Vault;
 
+import static sti.hknn.domain.Vault.courseList;
 import static sti.hknn.domain.Vault.students;
 
 import java.util.ArrayList;
@@ -14,6 +16,12 @@ import java.util.Scanner;
 public class StiServiceImpl implements StiService{
     static Scanner s = new Scanner(System.in);
     private static final Logger LOGGER = LoggerFactory.getLogger(StiServiceImpl.class);
+
+    @Override
+    public void init(){
+        Vault.createTeachers();
+        students = Vault.createStudentList();
+    }
 
     @Override
     public Student getStudent(String personalId){
@@ -68,6 +76,14 @@ public class StiServiceImpl implements StiService{
     }
 
     @Override
+    public void printCourses(Student student){
+        int i = 1;
+        for(Course course : student.getCourseList()){
+            System.out.println(i++ + ". " + course.getCourseId());
+        }
+    }
+
+    @Override
     public void menuChoice(int choice){
 
         switch (choice){
@@ -106,10 +122,15 @@ public class StiServiceImpl implements StiService{
                 s.nextLine();
                 switch(choice2){
                     case 1:{
-                        addNewCourse(personalId);
+                        for(Course course: courseList){
+                            if(!getStudent(personalId).getCourseList().contains(course)){
+                                System.out.println(course.getCourseId());
+                            }
+                        }
                         break;
                     }
                     case 2:{
+                        printCourses(getStudent(personalId));
                         break;
 
                     }

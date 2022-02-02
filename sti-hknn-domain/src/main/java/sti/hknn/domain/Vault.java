@@ -30,12 +30,11 @@ public class Vault {
         teacher2.addCourse(course2);
         teacher3.addCourse(course3);
     }
-    
+
     public static ArrayList<Course> createCourseList(){
         ArrayList<Course> courseList1 = new ArrayList<Course>();
         courseList1.add(course1);
         courseList1.add(course2);
-        //courseList1.add(course3);
         return courseList1;
     }
 }

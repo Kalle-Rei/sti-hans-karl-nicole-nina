@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public interface StiService {
 
+    void init();
 
     Student getStudent(String personalId);
     String printStudentInfo(Student student);
@@ -18,6 +19,7 @@ public interface StiService {
 
     //Menu handlers
     void printMenu();
+    void printCourses(Student student);
     void menuChoice(int choice);
 
 }
