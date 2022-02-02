@@ -72,12 +72,15 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public void removeCourse(Student student, String courseId) {
+        String courseToRemove = "";
         for(Course course: student.getCourseList()){
             if(courseId.equalsIgnoreCase(course.getCourseId())){
-                student.removeCourse(course);
+                courseToRemove += course.getCourseId();
+                System.out.println("Course removed.");
                 LOGGER.trace("course removed from student");
             }
         }
+        student.removeCourse(getCourse(courseToRemove));
     }
 
     @Override
@@ -92,9 +95,8 @@ public class StiServiceImpl implements StiService{
 
     @Override
     public void printCourses(Student student){
-        int i = 1;
         for(Course course : student.getCourseList()){
-            System.out.println(i++ + ". " + course.getCourseId());
+            System.out.println(course.getCourseId());
         }
     }
 
@@ -152,7 +154,12 @@ public class StiServiceImpl implements StiService{
                     }
                     case 2:{
                         //print all courses in student.courseList
+                        System.out.println("\nSelect a course: ");
                         printCourses(getStudent(personalId));
+                        String inputCourse = s.nextLine();
+                        removeCourse(getStudent(personalId), inputCourse);
+                        System.out.println(printStudentInfo(getStudent(personalId)));
+
                         //@TODO: let the user remove any of the printed courses from student.courseList
                         break;
 
